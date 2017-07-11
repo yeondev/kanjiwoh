@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: "local"
+  main:
+    banner-mode: "off"
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/kanjioh?useUnicode=true&characterEncoding=utf8
+    username: kanjioh
+    password: kanjioh
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      test-on-borrow: true
+      validation-query: SELECT 1

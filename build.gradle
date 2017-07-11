@@ -32,8 +32,14 @@ configurations {
 }
 
 dependencies {
+
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1")
+    compile("mysql:mysql-connector-java:5.1.38")
+	compile("org.springframework.boot:spring-boot-starter-jdbc")
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-parent')
+	compile('org.projectlombok:lombok:1.16.18')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
