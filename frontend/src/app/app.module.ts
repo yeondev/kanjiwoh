@@ -1,11 +1,12 @@
+import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
 import { InputComponent } from './components/input.component';
 import { StudyComponent } from './components/study.component';
+import { HttpRequestService } from './services/http-request.service';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
@@ -26,7 +27,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [HttpRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

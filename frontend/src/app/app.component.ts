@@ -8,15 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./css/style.css']
 })
 export class AppComponent {
-  router: Router;
+  _router: Router;
   urlList;
 
-  constructor(router: Router) {
+  constructor(private router: Router) {
     this.urlList = Const.URL;
-    this.router = router;
+    this._router = router;
+    console.log('app.component loaded');
   }
 
   moveScreen(url: string) {
-    this.router.navigateByUrl(url);
+    this._router.navigateByUrl(url);
   }
 }
