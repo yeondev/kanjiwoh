@@ -1,24 +1,25 @@
-<div id="form-div">
-      <div class="submit">
-        <input type="submit" (click)="moveScreen(urlList.KANJI)" value="INPUT KANJI" class="button-blue" id="btnInputKanji" />
-        <div class="ease"></div>
-      </div>
-      <div class="submit">
-        <input type="submit" (click)="moveScreen(urlList.STUDY)" value="STUDY" class="button-blue" id="btnStudy" />
-        <div class="ease"></div>
-      </div>
-      <div class="submit">
-        <input type="submit" (click)="moveScreen(urlList.EDIT)" value="EDIT" class="button-blue" id="btnEdit" />
-        <div class="ease"></div>
-      </div>            
-      <div class="submit">
-        <input type="submit" (click)="moveScreen(urlList.TEST)" value="TEST" class="button-blue" id="btnTest" />
-        <div class="ease"></div>
-      </div>      
-      <div class="submit">
-        <input type="submit" (click)="moveScreen(urlList.RESULT)" value="RESULT" class="button-blue" id="btnTestResult" />
-        <div class="ease"></div>
-      </div>      
-  </div>
-  
-  <router-outlet></router-outlet>
+
+<div >
+    <div class="submit">
+      <input type="submit" (click)="moveScreen(urlList.KANJI)" value="INPUT KANJI" class="button-blue" id="btnInputKanji" />
+      <div class="ease"></div>
+    </div>
+    <div class="submit">
+      <input type="submit" (click)="moveScreen(urlList.STUDY)" value="STUDY" class="button-blue" id="btnStudy" />
+      <div class="ease"></div>
+    </div>
+    <div class="submit">
+      <input type="submit" (click)="moveScreen(urlList.EDIT)" value="EDIT" class="button-blue" id="btnEdit" />
+      <div class="ease"></div>
+    </div>            
+    <div class="submit">
+      <input type="submit" (click)="moveScreen(urlList.TEST)" value="TEST" class="button-blue" id="btnTest" />
+      <div class="ease"></div>
+    </div>      
+    <div class="submit">
+      <input type="submit" (click)="moveScreen(urlList.RESULT)" value="RESULT" class="button-blue" id="btnTestResult" />
+      <div class="ease"></div>
+    </div>      
+</div>
+
+<router-outlet></router-outlet>

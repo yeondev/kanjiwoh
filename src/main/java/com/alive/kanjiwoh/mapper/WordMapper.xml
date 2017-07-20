@@ -7,4 +7,30 @@
     <select id="findAll" resultType="com.alive.kanjiwoh.model.WordDto">
         SELECT * FROM tb_word;
     </select>
+    
+    <insert id="insertWordGroup" useGeneratedKeys="true" keyProperty="groupNo" parameterType="com.alive.kanjiwoh.model.WordGroupDto">
+    INSERT INTO wordgroup (
+                USER_NO
+              , GROUP_NAME 
+    ) VALUES (
+                #{userNo} 
+              , #{groupName}
+    )
+    </insert>
+    
+    <insert id="insertWord" parameterType="com.alive.kanjiwoh.model.WordDto">
+     INSERT INTO words (
+                 USER_NO
+               , GROUP_NO
+               , WORD
+               , HIRAGANA
+               , MEANS
+     ) VALUES (
+                 #{userNo}
+               , #{groupNo}
+               , #{word}
+               , #{hiragana}
+               , #{means}
+     )
+    </insert>
 </mapper>

@@ -1,20 +1,57 @@
   <div id="form-div">
+    <form [formGroup]="wordForm" (ngSubmit)="onSubmit()">
+	    <p class="text">
+	      <input type="text" 
+	             name="text" 
+	             id="comment" 
+	             class="feedback-input" 
+	             placeholder="단어 그룹명" 
+	             formControlName="groupName"
+	             />
+	    </p>
+	    
+	    <select id="template">
+	        <option value="">--</option>
+	        <option *ngFor="let info of templateObject" value="{{info.templateNo}}">{{info.templateName}}</option>
+	    </select>
+	    
+	    <div formArrayName="wordList">
+          <div *ngFor="let info of wordForm.controls.wordList.controls; let i=index" class="panel panel-default">
+            <div class="panel-heading">
+              <span>No {{i + 1}}</span>
+              <span class="glyphicon glyphicon-remove pull-right" *ngIf="wordForm.controls.wordList.controls.length > 1" (click)="removeRow(i)"></span>
+            </div>
+            <div class="panel-body" [formGroupName]="i">
+              <div class="form-group col-xs-3">
+                <label>한자</label>
+                <input type="text" class="form-control" formControlName="word">
+              </div>
+              <div class="form-group col-xs-3">
+                <label>히라가나</label>
+                <input type="text" class="form-control" formControlName="hiragana">
+              </div>
+              <div class="form-group col-xs-3">
+                <label>의미</label>
+                <input type="text" class="form-control" formControlName="means">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="margin-20">
+          <a (click)="addRow()" style="cursor: default">
+            단어 추가 
+          </a>
+        </div>
 
-    <p class="text">
-      <input type="text" 
-             name="text" 
-             id="comment" 
-             class="feedback-input" 
-             placeholder="단어 그룹명" />
-    </p>
-    
-    <!-- 컨텐츠 템플릿 리스트의 추가  -->
- 
-    <!-- 컨텐츠 템플릿 추가 -->
-    <table>
-        <tr>
-            <th></th>
-        </tr>
-    </table>
-    
+        <div class="margin-20">
+          <button type="submit" class="btn btn-primary pull-right" [disabled]="!wordForm.valid">Submit</button>
+        </div>
+        <div class="clearfix"></div>
+        
+        <div class="margin-20" *ngIf="wordGroupObject && wordGroupObject.groupNo">
+          <div>안내 메시지 : </div>
+          <pre>등록 성공했어용-</pre>
+        </div>
+	</form>    
   </div>

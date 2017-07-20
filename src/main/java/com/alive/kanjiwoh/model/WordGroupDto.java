@@ -1,5 +1,7 @@
 package com.alive.kanjiwoh.model;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -7,13 +9,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class WordDto {
+public class WordGroupDto {
 
-	private int wordNo;
-	private int userNo;
 	private int groupNo;
-	private String word;
-	private String hiragana;
-	private String means;
-
+	private int userNo;
+	private String groupName;
+	private List<WordDto> wordList;
+	
 }

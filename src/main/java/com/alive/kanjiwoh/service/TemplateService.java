@@ -1,5 +1,7 @@
 package com.alive.kanjiwoh.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,9 @@ public class TemplateService {
 	@Autowired
 	TemplateMapper templateMapper;
 	
-	public TemplateDto get() {
+	public List<TemplateDto> get() {
 		DummyUserInfo dummyUserInfo = new DummyUserInfo();
 		
-		return templateMapper.selectTemplateInfo(dummyUserInfo.getUserId());
+		return templateMapper.selectTemplateInfo(dummyUserInfo.getUserNo());
 	}
 }

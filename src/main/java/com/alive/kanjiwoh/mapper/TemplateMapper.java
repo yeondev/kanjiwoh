@@ -1,5 +1,7 @@
 package com.alive.kanjiwoh.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.alive.kanjiwoh.model.TemplateDto;
@@ -7,5 +9,5 @@ import com.alive.kanjiwoh.model.TemplateDto;
 @Mapper
 public interface TemplateMapper {
 
-	TemplateDto selectTemplateInfo(Integer userId);
+	List<TemplateDto> selectTemplateInfo(Integer userId);
 }

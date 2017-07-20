@@ -1,5 +1,7 @@
 package com.alive.kanjiwoh.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +19,10 @@ public class TemplateController {
     TemplateService templateService;
     
     @RequestMapping("/get")
-    public @ResponseBody TemplateDto get(Model model) {
+    public @ResponseBody List<TemplateDto> get(Model model) {
     	System.out.println(this.getClass() + " get()");
     	
-    	TemplateDto tt = templateService.get();
+    	List<TemplateDto> tt = templateService.get();
     	System.out.println(tt);
         return tt;
     }

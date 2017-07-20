@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { FormGroup } from '@angular/forms';
+import { Http, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class HttpRequestService {
@@ -8,7 +10,7 @@ export class HttpRequestService {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
     'Access-Control-Allow-Headers': 'Content-Type',
-  }
+  };
 
   constructor(private http: Http) {
     console.log('httpRequestService ready');
@@ -19,5 +21,13 @@ export class HttpRequestService {
       header: new Headers(this.jsonHeader)
     };
     return this.http.get('/api/template/get', headerObj);
+  }
+
+  insertWordData(wordForm: any) {
+    console.log(wordForm)
+    const headerObj = {
+      header: new Headers(this.jsonHeader)
+    };
+    return this.http.post('/api/word/add', wordForm, headerObj)
   }
 }

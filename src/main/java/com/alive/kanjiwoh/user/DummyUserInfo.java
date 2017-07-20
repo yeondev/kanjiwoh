@@ -2,17 +2,17 @@ package com.alive.kanjiwoh.user;
 
 public class DummyUserInfo {
 
-	private Integer userId;
+	private Integer userNo;
 	
-	public Integer getUserId() {
-		return userId;
+	public Integer getUserNo() {
+		return userNo;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUserNo(Integer userId) {
+		this.userNo = userId;
 	}
 
 	public DummyUserInfo() {
-		setUserId(777);
+		setUserNo(777);
 	}
 }
